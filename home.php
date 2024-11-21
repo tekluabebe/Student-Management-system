@@ -1,88 +1,50 @@
-<style type="text/css">
-	.panel-body{
-		min-height: 150px;
-		text-align: center;
-		font-size: 75px; 
-	}
-</style> 
-<h1>Dashboard</h1>
-<div class="col-md-3">
-	<div class="panel panel-green">
-		<div class="panel-heading" >
-			Collection of Student
-		</div>
-		<div class="panel-body" style="color:green">
-			<?php 
-				$sql ="SELECT * FROM `tblstudent`";
-				$cur =  $mydb->setQuery($sql); 
-				$allstudent = $mydb->num_rows($cur);
 
-				echo $allstudent;
-			?>
-		</div>
-	</div>
-</div>
- 
-<div class="col-md-3">
-	<div class="panel panel-red">
-		<div class="panel-heading">
-			Collection of Officer
-		</div>
-		<div class="panel-body" style="color:red">
-		   <?php 
-				$sql ="SELECT * FROM `tblstudent` WHERE ACCOUNTTYPE='Officer'";
-					$cur = $mydb->setQuery($sql); 
-				$allofficer = $mydb->num_rows($cur);
+    <section id="home-section" class="hero">
+          <div class="home-slider js-fullheight owl-carousel">
+          <div class="slider-item js-fullheight">
+            <div class="overlay"></div>
+            <div class="container-fluid p-0">
+              <div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+                <div class="one-third order-md-last img js-fullheight" style="background-image:url(admin/img/school2.jpg);">
+                </div>
+                  <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                    <div class="text">
+                        <span class="subheading">BUK - Online Management System</span>
+                        <div class="horizontal">
+                            <h3 class="vr" style="background-image: url(images/divider.jpg);">Established 2020</h3>
+                            <h3 class="mb-4 mt-3">View Your Own <br><span>Records and Grades</span></h3>
+                            <p>"وفوق كل ذي علم عليم"</p>
+							<p>"...and above every possessor of knowledge there is </p>
+                            
+                            <p><a href="index.php?q=blog" class="btn btn-primary px-5 py-3 mt-3">Discover Now</a></p>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
 
-				echo $allofficer;
-			?>
-		</div>
-	</div>
-</div>
-<div class="col-md-3">
-	<div class="panel panel-yellow">
-		<div class="panel-heading">
-			Collection of User
-		</div>
-		<div class="panel-body" style="color:yellow">
-			<?php 
-				$sql ="SELECT * FROM `useraccounts`";
-					$cur = $mydb->setQuery($sql); 
-				$alluser = $mydb->num_rows($cur);
-
-				echo $alluser;
-			?>
-		</div>
-	</div>
-</div>  
-<div class="col-md-3">
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			Collection of Payments
-		</div>
-		<div class="panel-body"  style="color:blue">
-			<?php 
-
-			// $sql = "SELECT * FROM `course`";
-			// $mydb->setQuery($sql);
-			// $cur  = $mydb->loadResultList();
-
-			// foreach ($cur as $result) {
-				# code...
-					$sql ="SELECT SUM(`PAYMENT`) as 'Payment',COURSE_NAME FROM course c, `tblexpenses` e, `tblfees` f WHERE c.`COURSE_ID`=e.`COURSE_ID` AND e.`EXPENSEID`=f.`EXPENSEID`";
-					$mydb->setQuery($sql);
-					$collection = $mydb->loadSingleResult();
-				 
-
-					echo $collection->Payment .'<br>';
-			// }
-
-
-
-
-			
-			?>
-		</div>
-	</div>
-</div>
-  
+          <div class="slider-item js-fullheight">
+            <div class="overlay"></div>
+            <div class="container-fluid p-0">
+              <div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end" data-scrollax-parent="true">
+                <div class="one-third order-md-last img js-fullheight" style="background-image:url(admin/img/school.jpg);">
+                </div>
+                  <div class="one-forth d-flex js-fullheight align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                    <div class="text">
+                        <span class="subheading">BUK -  Online Management System</span>
+                        <div class="horizontal">
+                            <h3 class="vr" style="background-image: url(images/divider.jpg);">BUK - Student Management System</h3>
+                            <h2 class="mb-4 mt-3">A Thouroughly <span>Modern</span> Management System</h2>
+                            <p>A small river named Duden flows by their place and <br> supplies it with the necessary regelialia.</p>
+							<p>It is a paradisematic country.</p>
+                            
+                            <p><a href="index.php?q=login" class="btn btn-primary px-5 py-3 mt-3">Get Started</a></p>
+                          </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
